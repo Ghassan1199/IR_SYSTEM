@@ -49,7 +49,7 @@ class SearchEngine:
     
     
     @classmethod
-    def unified_search(cls, query, data_set_name, tfidf_file_path, vectorizer_file, doc_ids_file_path, ft_model, min_score, max_number=-1, tfidf_weight=0.5, embedding_weight=0.5):
+    def unified_search(cls, query, data_set_name, tfidf_file_path, vectorizer_file, doc_ids_file_path, ft_model, min_score, max_number=100, tfidf_weight=0.5, embedding_weight=0.5):
         # Load TF-IDF matrix and document IDs
         tfidf_matrix, doc_ids = TextProcessor.load_tfidf_matrix_and_doc_ids(tfidf_file_path, doc_ids_file_path)
         vectorizer = cls.load_vectorizer(vectorizer_file)

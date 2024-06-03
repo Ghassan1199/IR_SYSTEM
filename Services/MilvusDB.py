@@ -93,7 +93,7 @@ class MilvusDB:
                 limit=top_k, 
                 output_fields=["doc_id"]
             )
-
+            print(search_results)
             return str(search_results)
         except Exception as e:
             print(f"Failed to search for similar vectors: {e}")

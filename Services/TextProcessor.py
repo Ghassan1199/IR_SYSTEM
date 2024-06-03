@@ -126,6 +126,21 @@ class TextProcessor:
         stemmed = cls.stem_words(lemmatized)
         lower_text =cls.to_lower(stemmed)
         return lower_text
+
+    @classmethod
+    def process_text_for_embedding(cls, text):
+        text_without_links = cls.remove_links(text)
+        tokens = word_tokenize(text_without_links)
+        removed_accent = cls.remove_accents_from_list(tokens)
+        filtered = cls.remove_punctuation_from_list(removed_accent)
+        filtered_text = cls.remove_stopwords(filtered)
+        removed_markers = cls.remove_markers(filtered_text)
+        removed_apostrophe = cls.remove_apostrophe(removed_markers)
+        without_under_score = cls.remove_under_score(removed_apostrophe)
+        without_dashes = cls.remove_dashes(without_under_score)
+        lower_text =cls.to_lower(without_dashes)
+        return lower_text
+    
     
 
     @classmethod

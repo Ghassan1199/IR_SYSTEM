@@ -1,3 +1,7 @@
 Models
 DataSets
 .vscode
+test.ipynb
+Services/__pycache__/SearchEvaluator.cpython-39.pyc
+Services/__pycache__/SearchEngine.cpython-39.pyc
+Services/__pycache__/QueryProcessor.cpython-39.pyc

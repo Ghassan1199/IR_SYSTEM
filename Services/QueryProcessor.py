@@ -16,7 +16,12 @@ class QueryProcessor:
     def process_query(cls, query):
         corrected_query = TextProcessor.correct_sentence_spelling(query)
         return TextProcessor.process_text(corrected_query)
-
+    
+    @classmethod
+    def process_query_embedding(cls, query,ft_model):
+        query_text = TextProcessor.process_text_for_embedding(query)
+        return query_text
+    
     @classmethod
     def recognize_entities(cls, query):
         tokens = nltk.word_tokenize(query)
